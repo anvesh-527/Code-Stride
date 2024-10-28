@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const hardLabel = document.getElementById("hard-label");
     const cardStatsContainer = document.querySelector(".stats-cards");
 
-
-    //return true or false based on a regex
     function validateUsername(username) {
         if(username.trim() === "") {
             alert("Username should not be empty");
@@ -28,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         try{
             searchButton.textContent = "Searching...";
             searchButton.disabled = true;
-            //statsContainer.classList.add("hidden");
 
-            // const response = await fetch(url);
             const proxyUrl = 'https://cors-anywhere.herokuapp.com/' 
             const targetUrl = 'https://leetcode.com/graphql/';
             
@@ -89,20 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
         updateProgress(solvedTotalMediumQues, totalMediumQues, mediumLabel, mediumProgressCircle);
         updateProgress(solvedTotalHardQues, totalHardQues, hardLabel, hardProgressCircle);
 
-        // const cardsData = [
-        //     {label: "Overall Submissions", value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[0].submissions },
-        //     {label: "Overall Easy Submissions", value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[1].submissions },
-        //     {label: "Overall Medium Submissions", value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[2].submissions },
-        //     {label: "Overall Hard Submissions", value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[3].submissions },
-        // ];
-
-        // cardStatsContainer.innerHTML = cardsData.map(
-        //     data => 
-        //             `<div class="card">
-        //             <h4>${data.label}</h4>
-        //             <p>${data.value}</p>
-        //             </div>`
-        // ).join("")
         cardStatsContainer.innerHTML = `<h2>The total questions solved: ${totalCount}</h2>`;
 
     }
